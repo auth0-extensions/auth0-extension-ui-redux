@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && NODE_ENV=production webpack --config ./build/webpack.config.js --colors -p",
+    "lint:js": "eslint --ignore-path .gitignore --ignore-pattern webpack .",
     "release": "npm run build && git tag $npm_package_version && git push && git push --tags && npm publish",
     "test": "mocha --require tests/mocha_runner tests/**/*.js"
   },
@@ -16,9 +17,9 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
-    "eslint": "^3.7.1",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^2.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-auth0-base": "^12.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "mocha": "^2.4.5",
     "sinon": "^1.17.6"
   },
